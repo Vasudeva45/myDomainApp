@@ -13,13 +13,13 @@ export default function Home() {
     if (typeof window !== 'undefined') {
       if (window.location.host.includes("domainapp1.netlify.app")) {
         setWelcome("Welcome to Domain1")
-        setNavbarColor('blue');
+        setNavbarColor("blue");
       } else if (window.location.host.includes("domainapp3.netlify.app")) {
         setWelcome("Welcome to Domain3")
-        setNavbarColor('red');
+        setNavbarColor("red");
       } else {
         setWelcome("No Domain found")
-        setNavbarColor('default');
+        setNavbarColor("white");
       }
     }
   }, [])
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <nav className={styles.navbar} style={{ backgroundColor: navbarColor }}>
-        {/* Navbar content here */}
+        <h1>The value is: {welcome}</h1>
       </nav>
       <main className={styles.main}>
         <Image

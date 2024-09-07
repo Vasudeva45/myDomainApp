@@ -163,3 +163,36 @@ a.secondary {
     filter: invert();
   }
 }
+
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.main {
+  margin-top: 3rem;
+}
+
+.logo {
+  display: block;
+}
+
+.ctas {
+  margin-top: 2rem;
+}
+
+.footer {
+  margin-top: auto;
+}
