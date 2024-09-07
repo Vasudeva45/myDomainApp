@@ -7,21 +7,28 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
   const [welcome, setWelcome] = useState('')
+  const [navbarColor, setNavbarColor] = useState('');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (window.location.host.includes("domainapp1.netlify.app")) {
         setWelcome("Welcome to Domain1")
+        setNavbarColor('blue');
       } else if (window.location.host.includes("domainapp3.netlify.app")) {
         setWelcome("Welcome to Domain3")
+        setNavbarColor('red');
       } else {
         setWelcome("No Domain found")
+        setNavbarColor('default');
       }
     }
   }, [])
 
   return (
     <div className={styles.page}>
+      <nav className={styles.navbar} style={{ backgroundColor: navbarColor }}>
+        {/* Navbar content here */}
+      </nav>
       <main className={styles.main}>
         <Image
           className={styles.logo}
