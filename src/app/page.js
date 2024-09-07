@@ -1,7 +1,23 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [welcome, setWelcome] = useState()
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (window.location.host.includes("domainapp1.netlify.app")) {
+        setWelcome("Welcome to Domain1")
+      } else if (window.location.host.includes("domainapp3.netlify.app")) {
+        setWelcome("Welcome to Domain3")
+      } else {
+        setWelcome("No Domain found")
+      }
+    }
+  }, [])
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -13,12 +29,17 @@ export default function Home() {
           height={38}
           priority
         />
+        <h1>The value is: {welcome}</h1>
         <ol>
           <li>
             Get started by editing <code>src/app/page.js</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <h1>
+
+        </h1>
 
         <div className={styles.ctas}>
           <a
